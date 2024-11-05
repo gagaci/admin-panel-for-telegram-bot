@@ -9,6 +9,8 @@ import com.company.adminpaneltelegrambot.entity.Club;
 import com.company.adminpaneltelegrambot.enums.ClubType;
 import org.springframework.data.domain.Page;
 
+import java.util.List;
+
 public interface ClubService {
 
 
@@ -23,4 +25,6 @@ public interface ClubService {
     Done updateClub(UpdateClubRequest clubId);
 
     Done deleteClub(Integer clubId);
+
+    List<GetClubResponse> getAll();
 }

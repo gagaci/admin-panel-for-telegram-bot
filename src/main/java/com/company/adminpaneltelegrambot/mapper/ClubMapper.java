@@ -7,6 +7,8 @@ import com.company.adminpaneltelegrambot.dto.club.UpdateClubRequest;
 import com.company.adminpaneltelegrambot.entity.Club;
 import org.mapstruct.*;
 
+import java.util.List;
+
 import static org.mapstruct.MappingConstants.ComponentModel.SPRING;
 
 
@@ -19,6 +21,8 @@ public interface ClubMapper {
 
     @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
     void updateEntity(@MappingTarget Club entity, UpdateClubRequest dto);
+
+    List<GetClubResponse> toList(List<Club> entities);
 
 
 }

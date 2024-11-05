@@ -14,6 +14,8 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 
 public class ClubServiceImpl implements ClubService {
@@ -64,5 +66,10 @@ public class ClubServiceImpl implements ClubService {
     public Done deleteClub(Integer clubId) {
         clubRepository.deleteById(clubId);
         return new Done();
+    }
+
+    @Override
+    public List<GetClubResponse> getAll() {
+        return clubMapper.toList(clubRepository.findAll());
     }
 }
