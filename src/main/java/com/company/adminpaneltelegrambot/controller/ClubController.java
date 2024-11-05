@@ -12,6 +12,8 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping(Path.CLUB)
 @RequiredArgsConstructor
@@ -40,5 +42,10 @@ public class ClubController {
     @DeleteMapping("/{clubId}")
     public Result<Done> delete(@PathVariable Integer clubId) {
         return new Result<>(clubService.deleteClub(clubId));
+    }
+
+    @GetMapping()
+    public Result<List<GetClubResponse>> getAll(){
+        return new Result<>(clubService.getAll());
     }
 }
