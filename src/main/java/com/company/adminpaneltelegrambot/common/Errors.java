@@ -8,4 +8,5 @@ public class Errors {
 
 public static final String CLUB_NOT_FOUND = "club not found";
 public static final String EVENT_NOT_FOUND = "event not found";
+public static final String PROFESSOR_NOT_FOUND = "event not found";
 }

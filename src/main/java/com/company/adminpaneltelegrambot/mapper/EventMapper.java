@@ -10,15 +10,15 @@ import java.util.List;
 
 import static org.mapstruct.MappingConstants.ComponentModel.SPRING;
 
-@Mapper(componentModel = SPRING, unmappedSourcePolicy = ReportingPolicy.IGNORE, uses = {ClubMapper.class})
+@Mapper(componentModel = SPRING, unmappedSourcePolicy = ReportingPolicy.IGNORE, uses = {EventMapper.class})
 public interface EventMapper {
 
-    Event toEntity(CreateEventRequest request);
+  Event toEntity(CreateEventRequest request);
 
-    @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
-    void updateEntity(@MappingTarget Event entity, UpdateEventRequest dto);
+  @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
+  void updateEntity(@MappingTarget Event entity, UpdateEventRequest dto);
 
-    GetEventResponse toDto(Event entity);
+  GetEventResponse toDto(Event entity);
 
-    List<GetEventResponse> toList(List<Event> events);
+  List<GetEventResponse> toList(List<Event> events);
 }
