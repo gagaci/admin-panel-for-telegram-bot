@@ -19,7 +19,6 @@ public class GlobalExceptionHandler {
             MethodArgumentNotValidException ex) {
         FieldError firstError = ex.getBindingResult().getFieldErrors().get(0);
         Failure failure = new Failure(firstError.getDefaultMessage(), firstError.getField());
-
         return ResponseEntity
                 .badRequest()
                 .body(new Result<>(failure));
